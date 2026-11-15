@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy birthday, Heldana</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#d8b47a;--card:#fff6e6;--ink:#2e1b10;--mut:#7a5a45;--acc:#7b3f1d;--on:#fff6e6;--line:#d9bf94;--ok:#3f7a3a;--bad:#b0321f;--spot:rgba(40,22,10,.55);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#6b4527;--card:#24150c;--ink:#f6e7cf;--mut:#c9a583;--acc:#e8b070;--on:#24150c;--line:#4b3020;--ok:#8fc383;--bad:#ef8a73;--spot:rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#6b4527;--card:#24150c;--ink:#f6e7cf;--mut:#c9a583;--acc:#e8b070;--on:#24150c;--line:#4b3020;--ok:#8fc383;--bad:#ef8a73;--spot:rgba(0,0,0,.5);color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background-color:var(--bg);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><g fill='none' stroke='rgb(30,16,8)' stroke-opacity='.5' stroke-width='9' stroke-linecap='round'><circle cx='40' cy='40' r='20' stroke-dasharray='95 40'/><circle cx='130' cy='70' r='22' stroke-dasharray='100 40' transform='rotate(120 130 70)'/><circle cx='70' cy='140' r='19' stroke-dasharray='90 30' transform='rotate(250 70 140)'/><circle cx='160' cy='160' r='16' stroke-dasharray='70 30'/></g><g fill='rgb(30,16,8)' fill-opacity='.55'><circle cx='100' cy='20' r='5'/><circle cx='15' cy='110' r='5'/><circle cx='120' cy='120' r='4'/><circle cx='165' cy='25' r='4'/></g></svg>");color:var(--ink);font:17px/1.55 Figtree,system-ui,sans-serif;display:flex;justify-content:center;padding:20px 16px 40px}
+main{width:100%;max-width:480px}
+h1,h2{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:2rem;background:var(--card);border-radius:18px;padding:14px 18px;margin-bottom:14px;text-align:center}
+h2{font-size:1.4rem;margin-bottom:16px}
+.dots{display:flex;gap:5px;margin-bottom:14px}.dots i{flex:1;height:8px;border-radius:8px;background:var(--card);opacity:.55}.dots i.on{background:var(--acc);opacity:1}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:22px 18px}
+.cat{margin:0 0 10px;font-weight:600;color:var(--mut);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}.cat.bad{color:var(--bad)}
+.tim{height:10px;border-radius:10px;background:var(--line);overflow:hidden}#bar{height:100%;width:100%;background:var(--acc)}
+.secs{margin:6px 0 14px;text-align:right;font-weight:600;color:var(--mut)}
+input[type=text]{width:100%;font:inherit;padding:13px 14px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:12px}
+input:focus,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+button{font:inherit;font-weight:600;border:0;border-radius:14px;padding:13px 18px;cursor:pointer;background:var(--acc);color:var(--on)}
+button.ghost{background:transparent;color:var(--acc);border:2px solid var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.opts{display:grid;gap:10px}.opts button,.grid button{background:var(--card);color:var(--ink);border:2px solid var(--line);text-align:left}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.grid button{text-align:center;font-size:1.3rem;padding:16px 0}.grid button.sel{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.msg{min-height:1.5em;margin:12px 0 0;font-weight:600}.msg.bad{color:var(--bad)}.msg.ok{color:var(--ok)}
+.hint{color:var(--mut);margin:10px 0 0}.pq{font-size:1.15rem;font-weight:600;margin:0 0 14px}
+.shake{animation:sh .35s}@keyframes sh{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.ticket{position:relative;background:linear-gradient(135deg,#f3cf8d,#e0a85a);color:#2e1b10;border:3px dashed #2e1b10;border-radius:18px;padding:22px 18px;text-align:center;margin:6px 0 18px}
+.ticket small{letter-spacing:.2em;font-weight:600}.ticket h2{font-size:2.2rem;margin:6px 0}.ticket p{margin:6px 0}
+.ticket .no{position:absolute;top:10px;right:14px;font-weight:600}
+#conf{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}#conf i{position:absolute;top:-20px;width:10px;height:16px;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.big{font-size:3.2rem;margin-bottom:6px}.pop{animation:pop .8s cubic-bezier(.2,1.6,.4,1)}@keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}}
+.ticket{box-shadow:0 0 0 4px #ffd43b,0 0 28px 6px rgba(255,200,60,.7);overflow:hidden}.ticket::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);background-size:250% 100%;animation:shine 2.5s infinite;pointer-events:none}@keyframes shine{from{background-position:150% 0}to{background-position:-50% 0}}
+@media (prefers-reduced-motion:reduce){.pop,.ticket::after{animation:none}}
+video{width:100%;border-radius:16px;margin-top:14px;background:#000}
+.final{text-align:center}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}}
+</style>
+</head>
+<body>
+<div id="conf"></div>
+<main>
+  <h1 id="title"></h1>
+  <div class="dots" id="dots"></div>
+  <section class="card" id="stage" aria-live="polite"></section>
+</main>
+<script>
+const C={her:"Heldana",him:"Kaleab",v1:"part1.mp4",v2:"part2.mp4"};
+let R=[
+{c:"Riddle",t:"text",q:"Where do you go for chocolate and vanilla, white chocolate shavings and a KitKat on top?",a:["coldstone"],h:"Your ice cream order."},
+{c:"Riddle",t:"text",q:"I have spots, not stripes. I’m silent, fast, and I dressed up this whole page. What animal am I?",a:["leopard"],h:"Look at the background."},
+{c:"About "+C.him,t:"choice",q:"When is "+C.him+"’s birthday?",o:["July 6, 2007","July 16, 2007","June 7, 2007","July 6, 2006"],k:0},
+{c:"Game",t:"grid",q:"Your kind of “even”: tap every number that ends in 5 or 0, then check.",n:[15,22,40,7,35,18,50,9,60,27,45,31]},
+{c:"About "+C.him,t:"choice",q:"What is "+C.him+"’s favorite food?",o:["Kitfo","Lasagna","Shiro","Pizza"],k:0},
+{c:"Hard riddle",t:"text",q:"5, 10, 15, 25, 40 … which number comes next?",a:["65"],h:"Add the two numbers before it."},
+{c:"About us",t:"text",q:"What was my very first text to you?",a:["hey"],h:"Three letters."},
+{c:"Riddle",t:"text",q:"I’m iced, I’m sweet, and caramel runs through me. What am I?",a:["latte","caramel"],h:"It’s in your cup."},
+{c:"About us",t:"choice",q:"What date did we officially start dating?",o:["September 10","September 20","October 10","August 10"],k:0},
+{c:"About us",t:"text",q:"What nickname do I call you?",a:["niger"],h:"Type it the way I say it."}
+];
+const R2=[
+{c:"About us",t:"choice",q:"Where did we first meet?",o:["At school","At the mall","At a wedding","At the airport"],k:0},
+{c:"Hard puzzle",t:"text",q:"10, 20, 35, 55 … which number comes next?",a:["80"],h:"The gaps grow by 5 each time."},
+{c:"About us",t:"choice",q:"Where did we reconnect after more than a year of hiding?",o:["The MAU","A wedding","A football match","A coffee festival"],k:0},
+{c:"Riddle",t:"text",q:"The more of me you take, the more you leave behind. What am I?",a:["footstep"],h:"You make me when you walk."},
+{c:"About you",t:"choice",q:"Which magazine’s summer school did you attend in New York?",o:["Vogue","Elle","Cosmopolitan","TIME"],k:0},
+{c:"Game",t:"ord",q:"Tap these numbers from smallest to biggest.",n:[45,15,30,60,5,25]},
+{c:"About us",t:"choice",q:"What kind of class were our first official dates in?",o:["Export trade","Cooking","Painting","Dance"],k:0},
+{c:"Riddle",t:"text",q:"I have keys but open no doors, and a space but no room. What am I?",a:["keyboard"],h:"You’re using me right now."},
+{c:"Hard puzzle",t:"text",q:"I’m a number. Add me to myself, then multiply by 5, and you get 100. What am I?",a:["10"],h:"Double it first."},
+{c:"About us",t:"choice",q:"What did we both wear on our finance forum date?",o:["Suits","Tracksuits","Leopard onesies","Pajamas"],k:0}
+];
+R=R.flatMap((r,k)=>[r,R2[k]]);
+const H=[
+{q:"Unscramble your favorite scent: L L A I N A V",a:["vanilla"]},
+{q:"I’m a number that ends in 5. Double me and you get 90. What number am I?",a:["45"]},
+{q:"What gets wetter the more it dries?",a:["towel"]}
+];
+const $=s=>document.querySelector(s),norm=s=>s.toLowerCase().replace(/[^a-z0-9]/g,"");
+let i=0,hi=0,tm=null,dl=0;
+try{i=Math.min(+localStorage.getItem("hunt-v3")||0,R.length)}catch(e){}
+const save=()=>{try{localStorage.setItem("hunt-v3",i)}catch(e){}};
+$("#title").textContent="Happy birthday, "+C.her+" \u{1F90D}";
+function dots(){$("#dots").innerHTML=R.map((_,k)=>'<i class="'+(k<i?'on':'')+'"></i>').join("")}
+function msg(t,cls){const m=$("#msg");if(m){m.textContent=t;m.className="msg "+(cls||"")}}
+function wrong(){const c=$("#stage");c.classList.remove("shake");void c.offsetWidth;c.classList.add("shake");msg("Not quite. Try again.","bad")}
+function stop(){clearInterval(tm);tm=null}
+function start(){stop();dl=Date.now()+20000;tm=setInterval(()=>{const l=Math.max(0,dl-Date.now());$("#bar").style.width=(l/200)+"%";$("#sec").textContent=Math.ceil(l/1000);if(l<=0){stop();penalty()}},100)}
+function good(next){stop();msg("Correct!","ok");setTimeout(next,700)}
+function render(){
+  stop();dots();if(i>=R.length)return finale();
+  const r=R[i];
+  let h='<p class="cat">Round '+(i+1)+' of '+R.length+' · '+r.c+'</p><div class="tim"><div id="bar"></div></div><p class="secs"><span id="sec">20</span>s</p><h2>'+r.q+'</h2>';
+  let opts=[];
+  if(r.t==="text")h+='<input type="text" id="ans" autocomplete="off" aria-label="Your answer" placeholder="Type your answer"><div class="row"><button id="go">Check answer</button><button class="ghost" id="hb">Hint</button></div><p class="hint" id="hint" hidden>'+r.h+'</p>';
+  else if(r.t==="choice"){opts=r.o.map((o,k)=>({o,ok:k===r.k})).sort(()=>Math.random()-.5);h+='<div class="opts">'+opts.map((x,k)=>'<button data-k="'+k+'">'+x.o+'</button>').join("")+'</div>'}
+  else h+='<div class="grid">'+r.n.map(n=>'<button data-n="'+n+'">'+n+'</button>').join("")+'</div>'+(r.t==="grid"?'<button id="go">Check numbers</button>':'');
+  $("#stage").innerHTML=h+'<p class="msg" id="msg"></p>';
+  const adv=()=>{i++;save();render()};
+  if(r.t==="text"){
+    const chk=()=>{const v=norm($("#ans").value);if(!v)return;r.a.some(a=>v.includes(a))?good(adv):wrong()};
+    $("#go").onclick=chk;$("#ans").onkeydown=e=>{if(e.key==="Enter")chk()};$("#hb").onclick=()=>{$("#hint").hidden=false};
+  }else if(r.t==="choice"){
+    document.querySelectorAll(".opts button").forEach(b=>b.onclick=()=>opts[+b.dataset.k].ok?good(adv):wrong());
+  }else if(r.t==="ord"){
+    const so=[...r.n].sort((a,b)=>a-b);let nx=0;
+    document.querySelectorAll(".grid button").forEach(b=>b.onclick=()=>{if(+b.dataset.n===so[nx]){b.classList.add("sel");b.disabled=true;nx++;if(nx===so.length)good(adv)}else wrong()});
+  }else{
+    document.querySelectorAll(".grid button").forEach(b=>b.onclick=()=>b.classList.toggle("sel"));
+    $("#go").onclick=()=>{
+      const p=[...document.querySelectorAll(".grid button.sel")].map(b=>+b.dataset.n).sort((a,b)=>a-b);
+      const w=r.n.filter(n=>n%5===0).sort((a,b)=>a-b);
+      JSON.stringify(p)===JSON.stringify(w)?good(adv):wrong();
+    };
+  }
+  start();
+}
+function penalty(){
+  const p=H[hi++%H.length];
+  $("#stage").innerHTML='<p class="cat bad">Time’s up!</p><h2>Solve this harder puzzle, then try the question again.</h2><p class="pq">'+p.q+'</p><input type="text" id="ans" autocomplete="off" aria-label="Your answer" placeholder="Type your answer"><button id="go">Check answer</button><p class="msg" id="msg"></p>';
+  const chk=()=>{const v=norm($("#ans").value);if(!v)return;p.a.some(a=>v.includes(a))?(msg("Nice. Back to your question.","ok"),setTimeout(render,900)):wrong()};
+  $("#go").onclick=chk;$("#ans").onkeydown=e=>{if(e.key==="Enter")chk()};
+}
+function celebrate(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const c=$("#conf"),cs=["#e8b070","#d6336c","#ffd43b","#51cf66","#339af0","#ffffff"];for(let k=0;k<80;k++){const e=document.createElement("i");e.style.cssText="left:"+Math.random()*100+"%;background:"+cs[k%6]+";animation-duration:"+(2.5+Math.random()*3)+"s;animation-delay:"+Math.random()*1.5+"s";c.appendChild(e);setTimeout(()=>e.remove(),8000)}}
+function finale(){
+  $("#stage").innerHTML='<div class="final"><div class="big">\u{1F389}\u{1F382}\u{1F381}</div><h2>You did it, '+C.her+'! Happy birthday!</h2>'
+  +'<div class="ticket pop"><span class="no">No. 1050</span><small>ADMIT ONE</small><h2>ONE YES DAY</h2><p>For <strong>'+C.her+'</strong> · From <strong>'+C.him+'</strong></p>'
+  +'<p>Rule: send me a list of everything you want within the next 72 hours. I say yes.</p></div>'
+  +'<div class="row" style="justify-content:center"><button id="redeem">Redeem ticket</button><button class="ghost" id="watch">Watch our story</button></div>'
+  +'<p class="msg" id="msg"></p><div id="vid"></div><p class="hint"><button class="ghost" id="again">Play again</button></p></div>';
+  $("#redeem").onclick=()=>{celebrate();msg("Redeemed! Screenshot this ticket and send it to "+C.him+". Your 72 hours start now.","ok")};
+  $("#watch").onclick=()=>{$("#vid").innerHTML='<p class="cat">Part 1</p><video controls playsinline preload="metadata" src="'+C.v1+'"></video><p class="cat" style="margin-top:18px">Part 2</p><video controls playsinline preload="metadata" src="'+C.v2+'"></video>';$("#watch").hidden=true};
+  $("#again").onclick=()=>{i=0;save();render()};celebrate();
+}
+render();
+</script>
+</body>
+</html>
